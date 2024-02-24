@@ -1,0 +1,8 @@
+export { IconAlignJustify } from './icon-align-justify'
+export { IconArrowLeft } from './icon-arrow-left'
+export { IconExternalLink } from './icon-external-link'
+export { IconChevronUp } from './icon-chevron-up'
+export { IconMail } from './icon-mail'
+export { IconLogo } from './icon-logo'
+export { IconMeh } from './icon-meh'
+export { IconPhone } from './icon-phone'

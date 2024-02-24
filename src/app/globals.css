@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    
+    --background: 0 0% 7%;
+    --foreground: 0 0% 100%;
+    --muted: 0 0% 11%;
+    --muted-foreground: 240 5% 64%;
+    --primary: 26 92% 61%;
+    --primary-foreground: 0 0% 7%;
+    
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;  
+    --radius: 6px;
+
+    color: hsla(var(--foreground));
+  }  
+}
+
+
+::-webkit-scrollbar {  
+  width: 2rem;
+  background-color: hsla(var(--border));
+}
+
+::-webkit-scrollbar:vertical {
+  width: 8px;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 8px;  
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsla(var(--muted-foreground));
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsla(var(--muted-foreground));
+} 
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
