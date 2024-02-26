@@ -10,14 +10,6 @@ export const metadata = {
   description: 'Web Developer'
 }
 
-export const viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 1,
-  userScalable: 1,
-  shrinkToFit: 'no'
-}
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">

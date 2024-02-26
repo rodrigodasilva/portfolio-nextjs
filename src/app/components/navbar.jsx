@@ -2,10 +2,6 @@
 
 import Link from 'next/link'
 
-import { Button } from '@/components/ui/button'
-import { IconAlignJustify } from '@/components/ui/icons'
-
-import { Typography } from '@/components/ui/typography'
 import { useScrollPosition } from '@/utils/hooks/use-scroll-position'
 import { cn } from '@/utils/classnames'
 import { Logo } from '@/components/logo'
@@ -23,36 +19,23 @@ export function NavBar() {
   return (
     <header
       className={cn(
-        `fixed top-0 w-full h-16 flex justify-center bg-muted z-30`,
+        `fixed top-3 lef-[50%] right-[50%] transform translate-x-[50%] rounded-3xl px-6 w-max h-12 flex justify-center items-center bg-muted z-30`,
         { 'opacity-95 border-b border-b-border': scrolled }
       )}
     >
-      <div className="mx-4 flex max-w-screen-md items-center justify-between w-full">
+      <div className="flex gap-6 items-center">
         <Logo />
-
-        <div className="hidden sm:flex gap-4 items-center">
-          <ul className="flex gap-4 items-center">
-            {LINKS.map((item) => (
-              <li key={item.value}>
-                <Link href={item.value}>
-                  <Typography variant="body-medium" as="span">
-                    {item.label}
-                  </Typography>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <Button
-          size="icon"
-          className="sm:hidden"
-          variant="ghost-primary"
-          aria-label="Abrir menu"
-          radius="full"
-        >
-          <IconAlignJustify />
-        </Button>
+        <ul className="flex gap-6 items-center">
+          {LINKS.map((item) => (
+            <li key={item.value}>
+              <Link href={item.value}>
+                <span className="text-sm leading-6 font-regular text-muted-foreground">
+                  {item.label}
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </header>
   )
