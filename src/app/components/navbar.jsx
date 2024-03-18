@@ -19,11 +19,11 @@ export function NavBar() {
   return (
     <header
       className={cn(
-        `fixed top-0 lef-0 w-full px-6 h-12 flex justify-center items-center bg-background border-b border-b-transparent z-30`,
+        `fixed top-0 lef-0 w-full px-4 h-12 flex justify-center items-center bg-background border-b border-b-transparent z-30`,
         { 'opacity-95 !border-b-border': scrolled }
       )}
     >
-      <div className="flex gap-6 items-center justify-between w-full max-w-3xl">
+      <div className="flex gap-6 items-center justify-between w-full max-w-screen-md">
         <Logo />
         <ul className="flex gap-6 items-center">
           {LINKS.map((item) => (

@@ -18,7 +18,7 @@ function Banner({ className = '', ...props }) {
 
 export function HomeSection() {
   return (
-    <section className="flex gap-4 w-full">
+    <section className="max-w-screen-md flex gap-4 w-full px-4 sm:px-0">
       <div className="flex flex-col gap-6" data-aos="fade-right">
         <div className="flex gap-2 justify-between">
           <div className="flex flex-col justify-center gap-2">
