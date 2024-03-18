@@ -67,11 +67,11 @@ const skills = [
 
 export function SkillsBar() {
   return (
-    <div className="w-full bg-primary" data-aos="fade-in">
+    <div className="w-full" data-aos="fade-in">
       <InfiniteMovingCards
         direction="right"
         speed="slow"
-        className="w-full flex items-center max-w-screen-md mx-auto"
+        className="w-full flex items-center max-w-screen-md mx-auto bg-primary"
       >
         {skills.map(({ title, icon: Icon }) => (
           <li
