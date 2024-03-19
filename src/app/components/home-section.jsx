@@ -19,9 +19,12 @@ function Banner({ className = '', ...props }) {
 export function HomeSection() {
   return (
     <section className="max-w-screen-md flex gap-4 w-full px-4 sm:px-0">
-      <div className="flex flex-col gap-6" data-aos="fade-right">
+      <div className="flex flex-col gap-6">
         <div className="flex gap-2 justify-between">
-          <div className="flex flex-col justify-center gap-2">
+          <div
+            className="flex flex-col justify-center gap-2"
+            data-aos="fade-right"
+          >
             <h3 className="text-4xl sm:text-5xl font-bold">Rodrigo Ribeiro</h3>
             <h4 className="text-xl sm:text-2xl font-normal">
               Desenvolvedor Web
@@ -32,9 +35,12 @@ export function HomeSection() {
             data-aos="fade-left"
           />
         </div>
-        <Separator className="bg-border max-w-[100px] w-full" />
+        <Separator
+          className="bg-border max-w-[100px] w-full"
+          data-aos="fade-right"
+        />
 
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6" data-aos="fade-right">
           <p className="text-base leading-6 font-normal text-muted-foreground">
             Formado em Engenharia da Computação, atualmente trabalho como
             desenvolvedor utilizando ativamente NodeJS e ReactJS.
