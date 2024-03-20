@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <NavBar />
       <div className="bg-bg flex justify-center bg-background pt-8">
-        <main className="w-full flex overflow-hidden flex-col items-center justify-start gap-16 pt-20 pb-16">
+        <main className="w-full flex overflow-hidden flex-col items-center justify-start gap-20 pt-20 pb-16">
           <HomeSection />
           <SkillsBar />
           <MyResumeSection />
