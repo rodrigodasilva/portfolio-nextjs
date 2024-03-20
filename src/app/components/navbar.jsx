@@ -22,6 +22,7 @@ export function NavBar() {
         `fixed top-0 lef-0 w-full px-4 h-12 flex justify-center items-center bg-background border-b border-b-transparent z-30`,
         { 'opacity-95 !border-b-border': scrolled }
       )}
+      data-aos="fade-in"
     >
       <div className="flex gap-6 items-center justify-between w-full max-w-screen-md">
         <Logo />

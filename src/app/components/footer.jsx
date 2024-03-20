@@ -3,7 +3,10 @@ import { IconExternalLink, IconMail, IconPhone } from '@/components/ui/icons'
 
 export function Footer() {
   return (
-    <footer className="w-full bg-background border-t border-border space-y-6 flex justify-center p-4">
+    <footer
+      className="w-full bg-background border-t border-border space-y-6 flex justify-center p-4"
+      data-aos="fade-in"
+    >
       <div className="mx-4 flex flex-col gap-6 w-full  max-w-screen-md">
         <div className="flex flex-col sm:flex-row justify-between gap-4 items-start">
           <Logo className="text-primary" />
