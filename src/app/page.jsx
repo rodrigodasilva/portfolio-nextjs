@@ -11,16 +11,16 @@ export default function Home() {
   return (
     <>
       <NavBar />
-      <div className="bg-bg flex justify-center bg-background pt-8">
+      <div className="flex flex-col items-center bg-background pt-8">
         <main className="w-full flex overflow-hidden flex-col items-center justify-start gap-20 pt-20 pb-16">
           <HomeSection />
           <SkillsBar />
           <MyResumeSection />
           <ContactFormSection />
         </main>
+        <Footer />
+        <BackToTopButton />
       </div>
-      <BackToTopButton />
-      <Footer />
     </>
   )
 }
