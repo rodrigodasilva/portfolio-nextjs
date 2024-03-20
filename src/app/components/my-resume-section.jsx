@@ -63,7 +63,7 @@ export function MyResumeSection() {
       data-aos="fade-up"
       data-aos-delay="200"
     >
-      <h3 className="text-3xl font-normal text-center">Meu curriculo</h3>
+      <h3 className="text-3xl font-normal text-center">Meu currículo</h3>
 
       <Tabs
         defaultValue="experience"
