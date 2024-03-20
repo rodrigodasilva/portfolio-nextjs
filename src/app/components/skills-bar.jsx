@@ -71,11 +71,11 @@ export function SkillsBar() {
       <InfiniteMovingCards
         direction="right"
         speed="slow"
-        className="w-full flex items-center max-w-screen-md mx-auto bg-primary"
+        className="w-full flex items-center max-w-screen-md mx-auto bg-muted"
       >
         {skills.map(({ title, icon: Icon }) => (
           <li
-            className="w-max relative flex items-center text-primary-foreground"
+            className="w-max relative flex items-center text-muted-foreground"
             key={title}
             title={title}
           >
