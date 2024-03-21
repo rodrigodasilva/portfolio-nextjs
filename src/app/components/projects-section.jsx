@@ -24,11 +24,9 @@ export function ProjectsSection() {
         <CarouselContent>
           {Array.from({ length: 8 }).map((_, index) => (
             <CarouselItem key={index} className="max-w-xs flex flex-col gap-4">
-              <div className="flex aspect-video items-center justify-center p-6 bg-muted/50 rounded-md">
-                <span className="text-4xl font-semibold">{index + 1}</span>
-              </div>
+              <div className="flex aspect-video items-center justify-center p-6 bg-muted/50 rounded-md"></div>
               <div className="flex flex-col gap-1.5">
-                <span className="text-base font-medium">Site name</span>
+                <span className="text-base font-medium">Project name</span>
                 <span className="text-sm text-muted-foreground">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est
                   excepturi quis velit, voluptatem magni beatae.

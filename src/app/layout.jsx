@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { Inter } from 'next/font/google'
 
 import './globals.css'
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className="scroll-smooth">
       <AOSInit />
       <body className={inter.classvaame}>{children}</body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
     </html>
   )
 }
