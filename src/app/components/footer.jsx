@@ -1,42 +1,67 @@
-import { Logo } from '@/components/logo'
-import { IconExternalLink, IconMail, IconPhone } from '@/components/ui/icons'
+import Link from 'next/link'
+
+import { ButtonGroupSocialLinks } from '@/components/button-group-social-links'
+import { IconWhatsapp, IconMail } from '@/components/ui/icons'
+import { Separator } from '@/components/ui/separator'
+
+const LINKS = [
+  { label: 'Home', value: '#home' },
+  { label: 'Projetos', value: '#projetos' },
+  { label: 'Contato', value: '#contato' }
+]
 
 export function Footer() {
   return (
-    <footer
-      className="w-full bg-background border-t border-border space-y-6 flex justify-center p-4"
-      data-aos="fade-in"
-    >
-      <div className="mx-4 flex flex-col gap-6 w-full  max-w-screen-md">
-        <div className="flex flex-col sm:flex-row justify-between gap-4 items-start">
-          <Logo className="text-primary" />
-          <div className="flex flex-col gap-2">
-            <span className={'text-xs font-medium'}>Entre em contato</span>
+    <div className="w-full flex flex-col items-center gap-8" data-aos="fade-in">
+      <h3 className="text-3xl font-normal text-center px-4">
+        Vamos trabalhar juntos?!
+      </h3>
+
+      <Separator />
+
+      <footer className="w-full max-w-screen-md px-4 lg:px-0 pb-14 sm:pb-4">
+        <div className="flex flex-col gap-6 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             <div className="flex flex-col gap-2">
-              <span className="flex items-center gap-2 text-sm leading-6 font-medium">
-                <IconPhone className="w-5 h-5" />
-                (77) 98122-1665
+              <span className="text-sm text-muted-foreground font-normal uppercase mb-3">
+                Links
               </span>
-              <span className="flex items-center gap-2 break-all text-sm leading-6 font-medium">
-                <IconMail className="w-5 h-5" />
-                comercial@jmcontabilize.com.br
+              <ButtonGroupSocialLinks />
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <span className="text-sm text-muted-foreground font-normal uppercase mb-3">
+                Navegação
               </span>
+              <ul className="flex flex-col gap-2">
+                {LINKS.map((item) => (
+                  <li key={item.value}>
+                    <Link href={item.value}>
+                      <span className="text-sm font-normal">{item.label}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <span className="text-sm text-muted-foreground font-normal uppercase mb-3">
+                Contatos
+              </span>
+              <div className="flex flex-col gap-2">
+                <span className="flex items-center gap-2 text-sm font-normal">
+                  <IconWhatsapp className="min-w-[16px] w-[16px] h-5" />
+                  (77) 98122-1665
+                </span>
+                <span className="flex items-center gap-2 text-sm font-normal">
+                  <IconMail className="min-w-[16px] w-[16px] h-5" />
+                  ribeiro.rodrigodasilva@gmail.com
+                </span>
+              </div>
             </div>
           </div>
         </div>
-
-        <span className="text-sm leading-6 font-regular flex items-start sm:items-center sm:justify-center sm:gap-1 flex-col sm:flex-row">
-          Desenvolvido por{' '}
-          <a
-            className="text-sm leading-6 font-bold flex items-center gap-1"
-            href="https://www.linkedin.com/in/rodrigo-ribeiro-programador/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Rodrigo Ribeiro <IconExternalLink />
-          </a>
-        </span>
-      </div>
-    </footer>
+      </footer>
+    </div>
   )
 }
