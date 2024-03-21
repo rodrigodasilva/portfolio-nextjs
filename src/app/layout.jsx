@@ -10,6 +10,11 @@ export const metadata = {
   description: 'Web Developer'
 }
 
+export const viewport = {
+  colorScheme: 'dark',
+  themeColor: '#020817'
+}
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
