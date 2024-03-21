@@ -1,6 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
+import { IconCircleArrowRight } from '@/components/ui/icons'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 
@@ -51,8 +52,10 @@ export function ContactFormSection() {
           <Label htmlFor="message">Mensagem</Label>
           <Input id="message" name="message" required />
         </div>
-        <Button className="w-full sm:w-max mr-auto" radius="full">
+
+        <Button className="w-max pr-1" radius="full">
           Enviar mensagem
+          <IconCircleArrowRight className="w-8 h-8" />
         </Button>
       </form>
     </section>

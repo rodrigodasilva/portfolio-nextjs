@@ -197,7 +197,6 @@ const CarouselPrevious = React.forwardRef(
         ref={ref}
         variant="secondary"
         size="icon"
-        radius="full"
         className={className}
         disabled={!canScrollPrev}
         onClick={scrollPrev}
@@ -220,7 +219,6 @@ const CarouselNext = React.forwardRef(
         ref={ref}
         variant="secondary"
         size="icon"
-        radius="full"
         className={className}
         disabled={!canScrollNext}
         onClick={scrollNext}
@@ -250,7 +248,7 @@ const CarouselDotButtons = (props) => {
   const { scrollSnaps, selectedIndex, onDotButtonClick } = useCarousel()
 
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2" {...props}>
       {scrollSnaps.map((_, index) => (
         <CarouselDotButton
           key={index}

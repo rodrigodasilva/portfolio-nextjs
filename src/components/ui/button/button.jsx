@@ -18,17 +18,17 @@ const buttonVariants = cva(
         sm: 'h-8 px-3 text-sm',
         md: 'h-10 px-4 py-2',
         lg: 'h-12 px-8',
-        icon: 'h-9 w-9 rounded-full'
+        icon: 'h-9 w-9 !rounded-full p-0'
       },
       radius: {
-        medium: 'rounded-md',
-        full: 'rounded-full'
+        md: 'rounded-md',
+        full: 'rounded-full px-4'
       }
     },
     defaultVariants: {
       variant: 'primary',
       size: 'md',
-      radius: 'medium'
+      radius: 'md'
     }
   }
 )

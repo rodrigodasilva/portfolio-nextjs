@@ -1,5 +1,8 @@
+import Link from 'next/link'
+
 import { ButtonGroupSocialLinks } from '@/components/button-group-social-links'
 import { Button } from '@/components/ui/button'
+import { IconCircleArrowRight } from '@/components/ui/icons'
 import { Separator } from '@/components/ui/separator'
 
 import { cn } from '@/utils/classnames'
@@ -48,8 +51,11 @@ export function HomeSection() {
 
           <ButtonGroupSocialLinks className="text-muted-foreground" />
 
-          <Button className="w-max" radius="full">
-            Entre em contato
+          <Button className="w-max pr-1" radius="full" asChild>
+            <Link href="#contato">
+              Entre em contato
+              <IconCircleArrowRight className="w-8 h-8" />
+            </Link>
           </Button>
         </div>
       </div>

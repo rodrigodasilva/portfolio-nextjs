@@ -1,6 +1,7 @@
 export { IconAlignJustify } from './icon-align-justify'
 export { IconArrowLeft } from './icon-arrow-left'
 export { IconArrowRight } from './icon-arrow-right'
+export { IconCircleArrowRight } from './icon-circle-arrow-right'
 export { IconExternalLink } from './icon-external-link'
 export { IconChevronUp } from './icon-chevron-up'
 export { IconMail } from './icon-mail'
