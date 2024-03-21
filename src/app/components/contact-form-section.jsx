@@ -51,11 +51,7 @@ export function ContactFormSection() {
           <Label htmlFor="message">Mensagem</Label>
           <Input id="message" name="message" required />
         </div>
-        <Button
-          variant="fill-primary"
-          className="w-full sm:w-max mr-auto"
-          radius="full"
-        >
+        <Button className="w-full sm:w-max mr-auto" radius="full">
           Enviar mensagem
         </Button>
       </form>
