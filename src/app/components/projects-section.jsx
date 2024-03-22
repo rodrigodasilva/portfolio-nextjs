@@ -15,6 +15,7 @@ export function ProjectsSection() {
       className="max-w-screen-md flex flex-col items-center gap-8 w-full px-4 sm:px-0"
       data-aos="fade-in"
       data-aos-delay="200"
+      id="projetos"
     >
       <h3 className="text-3xl font-normal text-left w-full">
         Últimos projetos
