@@ -4,18 +4,26 @@ import { Button } from '@/components/ui/button'
 import { IconCircleArrowRight } from '@/components/ui/icons'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { submitContactForm } from '../actions'
+import { useState } from 'react'
+import { Spinner } from '@/components/ui/spinner'
 
 export function ContactFormSection() {
-  function handleSubmitForm(e) {
+  const [isLoading, setIsLoading] = useState(false)
+
+  async function handleSubmitForm(e) {
     e.preventDefault()
+    setIsLoading(true)
 
     const form = new FormData(e.target)
     const name = form.get('name')?.trim?.()
     const email = form.get('email')?.trim?.()
     const subject = form.get('subject')?.trim?.()
+    const message = form.get('message')?.trim?.()
 
-    const queryParams = new URLSearchParams({ name, email, subject, document })
-    console.log(queryParams)
+    await submitContactForm({ name, email, subject, message })
+
+    setIsLoading(false)
   }
 
   return (
@@ -38,24 +46,31 @@ export function ContactFormSection() {
       >
         <div className="flex flex-col gap-2">
           <Label htmlFor="name">Nome</Label>
-          <Input id="name" name="name" required />
+          <Input id="name" name="name" required defaultValue="rodrigo" />
         </div>
         <div className="flex flex-col gap-2">
           <Label htmlFor="email">E-mail</Label>
-          <Input id="email" name="email" type="email" required />
+          <Input
+            id="email"
+            name="email"
+            type="email"
+            required
+            defaultValue="rodrigo.ribeiro.g1@gmail.com"
+          />
         </div>
         <div className="flex flex-col gap-2">
           <Label htmlFor="subject">Assunto</Label>
-          <Input id="subject" name="subject" required />
+          <Input id="subject" name="subject" required defaultValue="Trabalho" />
         </div>
         <div className="flex flex-col gap-2">
           <Label htmlFor="message">Mensagem</Label>
-          <Input id="message" name="message" required />
+          <Input id="message" name="message" required defaultValue="mensagem" />
         </div>
 
         <Button className="w-max pr-1" radius="full">
           Enviar mensagem
-          <IconCircleArrowRight className="w-8 h-8" />
+          {isLoading && <Spinner size="lg" />}
+          {!isLoading && <IconCircleArrowRight className="w-8 h-8" />}
         </Button>
       </form>
     </section>
