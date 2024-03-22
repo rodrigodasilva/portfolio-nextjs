@@ -44,25 +44,19 @@ export function ContactFormSection() {
       >
         <div className="flex flex-col gap-2">
           <Label htmlFor="name">Nome</Label>
-          <Input id="name" name="name" required defaultValue="rodrigo" />
+          <Input id="name" name="name" required />
         </div>
         <div className="flex flex-col gap-2">
           <Label htmlFor="email">E-mail</Label>
-          <Input
-            id="email"
-            name="email"
-            type="email"
-            required
-            defaultValue="rodrigo.ribeiro.g1@gmail.com"
-          />
+          <Input id="email" name="email" type="email" required />
         </div>
         <div className="flex flex-col gap-2">
           <Label htmlFor="subject">Assunto</Label>
-          <Input id="subject" name="subject" required defaultValue="Trabalho" />
+          <Input id="subject" name="subject" required />
         </div>
         <div className="flex flex-col gap-2">
           <Label htmlFor="message">Mensagem</Label>
-          <Input id="message" name="message" required defaultValue="mensagem" />
+          <Input id="message" name="message" required />
         </div>
 
         <Button className="w-max pr-1" radius="full">
