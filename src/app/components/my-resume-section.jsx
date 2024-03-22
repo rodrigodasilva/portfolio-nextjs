@@ -4,11 +4,11 @@ function EducationContent() {
   return (
     <ul className="w-full sm:max-w-[80%] mx-auto">
       <li className="w-full flex flex-col gap-1.5 border border-border px-6 py-4 rounded">
-        <h5 className="text-lg font-medium">Bacharel em Eng. da Computação</h5>
-        <h6 className="text-base font-normal text-muted-foreground">
+        <h4 className="text-lg font-medium">Bacharel em Eng. da Computação</h4>
+        <span className="text-base font-normal text-muted-foreground">
           Faculdade Independente do Nordeste
-        </h6>
-        <span className="bg-primary/20 px-1.5 py-1 rounded-sm text-xs font-normal text-primary w-max">
+        </span>
+        <span className="bg-primary/10 px-1.5 py-1 rounded-sm text-xs font-normal text-primary w-max">
           Jan 2012 - Dez 2017
         </span>
       </li>
@@ -21,11 +21,11 @@ function ExperienceContent() {
     <ul className="space-y-4 w-full sm:max-w-[80%] mx-auto">
       <li className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 border border-border px-6 py-4 rounded">
         <div className="flex flex-col gap-1.5">
-          <h5 className="text-lg font-medium">Desenvolvedor Fullstack</h5>
-          <h6 className="text-base font-normal text-muted-foreground">
+          <h4 className="text-lg font-medium">Desenvolvedor Fullstack</h4>
+          <span className="text-base font-normal text-muted-foreground">
             Live On Solutions
-          </h6>
-          <span className="bg-primary/20 px-1.5 py-1 rounded-sm text-xs font-normal text-primary w-max">
+          </span>
+          <span className="bg-primary/10 px-1.5 py-1 rounded-sm text-xs font-normal text-primary w-max">
             Out 2019 - Ago 2020
           </span>
         </div>
@@ -39,9 +39,11 @@ function ExperienceContent() {
 
       <li className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 border border-border px-6 py-4 rounded">
         <div className="flex flex-col gap-1.5">
-          <h5 className="text-lg font-medium">Desenvolvedor Fullstack</h5>
-          <h6 className="text-base font-normal text-muted-foreground">Code7</h6>
-          <span className="bg-primary/20 px-1.5 py-1 rounded-sm text-xs font-normal text-primary w-max">
+          <h4 className="text-lg font-medium">Desenvolvedor Fullstack</h4>
+          <span className="text-base font-normal text-muted-foreground">
+            Code7
+          </span>
+          <span className="bg-primary/10 px-1.5 py-1 rounded-sm text-xs font-normal text-primary w-max">
             Set 2020 - Atual
           </span>
         </div>

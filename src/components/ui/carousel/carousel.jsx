@@ -241,6 +241,7 @@ const CarouselDotButton = ({ active, children, ...props }) => {
       {...props}
     >
       {children}
+      <span className="sr-only">Change slide</span>
     </button>
   )
 }

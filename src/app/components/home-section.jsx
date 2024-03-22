@@ -11,7 +11,7 @@ function Banner({ className = '', ...props }) {
   return (
     <div
       className={cn(
-        'relative w-full flex items-end justify-center bg-primary/50 bg-[url("/person.png")] bg-no-repeat bg-cover bg-bottom',
+        'relative w-full flex items-end justify-center bg-primary/50 bg-[url("/person.webp")] bg-no-repeat bg-cover bg-bottom',
         className
       )}
       {...props}
