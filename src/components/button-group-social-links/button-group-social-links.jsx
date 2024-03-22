@@ -33,6 +33,7 @@ export function ButtonGroupSocialLinks({ className }) {
             rel="noreferrer"
           >
             <Icon />
+            <span className="sr-only">{name}</span>
           </a>
         </li>
       ))}
