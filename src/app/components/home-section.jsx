@@ -6,15 +6,20 @@ import { IconCircleArrowRight } from '@/components/ui/icons'
 import { Separator } from '@/components/ui/separator'
 
 import { cn } from '@/utils/classnames'
+import Image from 'next/image'
 
 function Banner({ className = '', ...props }) {
   return (
-    <div
+    <Image
+      src="/person.webp"
+      alt="Person"
+      width={140}
+      height={150}
       className={cn(
-        'relative w-full flex items-end justify-center bg-primary/50 bg-[url("/person.webp")] bg-no-repeat bg-cover bg-bottom',
+        'relative w-full flex items-end justify-center bg-primary/50',
         className
       )}
-      {...props}
+      priority
     />
   )
 }
