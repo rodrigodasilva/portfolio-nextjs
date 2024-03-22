@@ -1,17 +1,46 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
+const EXPERIENCE = [
+  {
+    position: 'Desenvolvedor Fullstack',
+    company: 'Live On Solutions',
+    period: 'Out 2019 - Ago 2020',
+    description:
+      'Manutenção e implementação de novas funcionalidades utilizando Reactjs; alinhamento com a equipe e integração com API’s internas e externas'
+  },
+  {
+    position: 'Desenvolvedor Fullstack',
+    company: 'Code7',
+    period: 'Set 2020 - Atual',
+    description:
+      'Manutenção, planejamento de melhorias e adição de funcionalidades de um sistema drag-on-drop para montagem de chatbots utilizando basicamente Reactjs e Nodejs'
+  }
+]
+
+const EDUCATION = [
+  {
+    course: 'Bacharel em Eng. da Computação',
+    local: 'Faculdade Independente do Nordeste',
+    period: 'Jan 2012 - Dez 2017'
+  }
+]
+
 function EducationContent() {
   return (
     <ul className="w-full sm:max-w-[80%] mx-auto">
-      <li className="w-full flex flex-col gap-1.5 border border-border px-6 py-4 rounded">
-        <h4 className="text-lg font-medium">Bacharel em Eng. da Computação</h4>
-        <span className="text-base font-normal text-muted-foreground">
-          Faculdade Independente do Nordeste
-        </span>
-        <span className="bg-primary/10 px-1.5 py-1 rounded-sm text-xs font-normal text-primary w-max">
-          Jan 2012 - Dez 2017
-        </span>
-      </li>
+      {EDUCATION.map((item) => (
+        <li
+          key={item.period}
+          className="w-full flex flex-col gap-2 border border-border px-6 py-4 rounded"
+        >
+          <h4 className="text-lg font-medium leading-none">{item.course}</h4>
+          <span className="text-base text-muted-foreground">{item.local}</span>
+
+          <span className="bg-primary/10 px-1.5 py-1 rounded-sm text-xs font-normal text-primary w-max">
+            {item.period}
+          </span>
+        </li>
+      ))}
     </ul>
   )
 }
@@ -19,41 +48,29 @@ function EducationContent() {
 function ExperienceContent() {
   return (
     <ul className="space-y-4 w-full sm:max-w-[80%] mx-auto">
-      <li className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 border border-border px-6 py-4 rounded">
-        <div className="flex flex-col gap-1.5">
-          <h4 className="text-lg font-medium">Desenvolvedor Fullstack</h4>
-          <span className="text-base font-normal text-muted-foreground">
-            Live On Solutions
-          </span>
-          <span className="bg-primary/10 px-1.5 py-1 rounded-sm text-xs font-normal text-primary w-max">
-            Out 2019 - Ago 2020
-          </span>
-        </div>
+      {EXPERIENCE?.map((item) => (
+        <li
+          key={item.period}
+          className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 border border-border px-6 py-4 rounded"
+        >
+          <div className="flex flex-col gap-2">
+            <h4 className="text-lg font-medium leading-none">
+              {item.position}
+            </h4>
+            <span className="text-base text-muted-foreground">
+              {item.company}
+            </span>
 
-        <span className="text-muted-foreground text-sm">
-          Manutenção e implementação de novas funcionalidades utilizando
-          Reactjs; alinhamento com a equipe e integração com API’s internas e
-          externas
-        </span>
-      </li>
+            <span className="bg-primary/10 px-1.5 py-1 rounded-sm text-xs font-normal text-primary w-max">
+              {item.period}
+            </span>
+          </div>
 
-      <li className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 border border-border px-6 py-4 rounded">
-        <div className="flex flex-col gap-1.5">
-          <h4 className="text-lg font-medium">Desenvolvedor Fullstack</h4>
-          <span className="text-base font-normal text-muted-foreground">
-            Code7
+          <span className="text-muted-foreground text-sm">
+            {item.description}
           </span>
-          <span className="bg-primary/10 px-1.5 py-1 rounded-sm text-xs font-normal text-primary w-max">
-            Set 2020 - Atual
-          </span>
-        </div>
-
-        <span className="text-muted-foreground text-sm">
-          Manutenção, planejamento de melhorias e adição de funcionalidades de
-          um sistema drag-on-drop para montagem de chatbots utilizando
-          basicamente Reactjs e Nodejs
-        </span>
-      </li>
+        </li>
+      ))}
     </ul>
   )
 }
