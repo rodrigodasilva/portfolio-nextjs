@@ -12,7 +12,7 @@ const LINKS = [
 
 export function Footer() {
   return (
-    <div className="w-full flex flex-col items-center gap-8" data-aos="fade-in">
+    <div className="w-full flex flex-col items-center gap-8">
       <h3 className="text-3xl font-normal text-center px-4">
         Vamos trabalhar juntos?!
       </h3>

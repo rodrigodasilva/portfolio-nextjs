@@ -67,7 +67,7 @@ const skills = [
 
 export function SkillsBar() {
   return (
-    <div className="w-full" data-aos="fade-in" data-aos-delay="100">
+    <div className="w-full">
       <InfiniteMovingCards
         direction="right"
         speed="slow"

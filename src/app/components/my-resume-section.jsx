@@ -58,11 +58,7 @@ function ExperienceContent() {
 
 export function MyResumeSection() {
   return (
-    <section
-      className="max-w-screen-md flex flex-col items-center gap-8 w-full px-4 sm:px-0"
-      data-aos="fade-up"
-      data-aos-delay="200"
-    >
+    <section className="max-w-screen-md flex flex-col items-center gap-8 w-full px-4 sm:px-0">
       <h3 className="text-3xl font-normal text-center">Meu currículo</h3>
 
       <Tabs
