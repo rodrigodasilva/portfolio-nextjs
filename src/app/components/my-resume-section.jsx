@@ -5,15 +5,23 @@ const EXPERIENCE = [
     position: 'Desenvolvedor Fullstack',
     company: 'Live On Solutions',
     period: 'Out 2019 - Ago 2020',
-    description:
-      'Manutenção e implementação de novas funcionalidades utilizando Reactjs; alinhamento com a equipe e integração com API’s internas e externas'
+    descriptions: [
+      'Manutenção e desenvolvimento de novas funcionalidades com foco no frontend em um sistema de pagamentos white-label, usando React, Redux, Styled Components;',
+      'Implementação de páginas para realização de transferências, geração de relatórios, entre outras, realizando integração com API’s internas e externas;'
+    ]
   },
   {
     position: 'Desenvolvedor Fullstack',
     company: 'Code7',
     period: 'Set 2020 - Atual',
-    description:
-      'Manutenção, planejamento de melhorias e adição de funcionalidades de um sistema drag-on-drop para montagem de chatbots utilizando basicamente Reactjs e Nodejs'
+    descriptions: [
+      'Manutenção, planejamento de melhorias e adição de funcionalidades de um sistema drag-on-drop para criação de chatbots/uras utilizando React, Node e o ecossistema javascript;',
+      'Implementação de melhorias no desempenho do criador de bots;',
+      'Refatoração e desenvolvimento da aplicação com uma nova identidade visual;',
+      'Desenvolvimento de funcionalidade para internacionalização usando a biblioteca i18n;',
+      'Implementação de relatórios para controle de consumo das URA’s;',
+      'Documentação de componentes usando storybook;'
+    ]
   }
 ]
 
@@ -51,7 +59,7 @@ function ExperienceContent() {
       {EXPERIENCE?.map((item) => (
         <li
           key={item.period}
-          className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 border border-border px-6 py-4 rounded"
+          className="grid w-full grid-cols-1 gap-2 sm:grid-cols-2 border border-border px-6 py-4 rounded"
         >
           <div className="flex flex-col gap-2">
             <h4 className="text-lg font-medium leading-none">
@@ -66,9 +74,15 @@ function ExperienceContent() {
             </span>
           </div>
 
-          <span className="text-muted-foreground text-sm">
-            {item.description}
-          </span>
+          <ul className="list-disc">
+            {item.descriptions.map((description, index) => (
+              <li key={index}>
+                <span className="text-muted-foreground text-sm">
+                  {description}
+                </span>
+              </li>
+            ))}
+          </ul>
         </li>
       ))}
     </ul>
