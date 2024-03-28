@@ -74,7 +74,7 @@ function ExperienceContent() {
             </span>
           </div>
 
-          <ul className="list-disc">
+          <ul className="list-disc marker:text-muted-foreground pl-4 sm:pl-0">
             {item.descriptions.map((description, index) => (
               <li key={index}>
                 <span className="text-muted-foreground text-sm">
