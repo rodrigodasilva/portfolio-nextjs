@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
+
 import { Button } from '../button'
 import { cn } from '@/utils/classnames'
 import { IconArrowLeft, IconArrowRight } from '../icons'
@@ -82,7 +83,7 @@ const Carousel = React.forwardRef(
       [scrollPrev, scrollNext]
     )
 
-    const onDotButtonClick = React.useCallback(
+    const onScrollTo = React.useCallback(
       (index) => {
         scrollTo?.(index)
       },
@@ -129,7 +130,7 @@ const Carousel = React.forwardRef(
           scrollNext,
           canScrollPrev,
           canScrollNext,
-          onDotButtonClick,
+          onScrollTo,
           selectedIndex,
           scrollSnaps
         }}
@@ -158,7 +159,7 @@ const CarouselContent = React.forwardRef(({ className, ...props }, ref) => {
       <div
         ref={ref}
         className={cn(
-          'flex',
+          'flex items-start',
           orientation === 'horizontal' ? '-ml-4' : '-mt-4 flex-col',
           className
         )}
@@ -245,19 +246,35 @@ const CarouselDotButton = ({ active, children, ...props }) => {
     </button>
   )
 }
+
 const CarouselDotButtons = (props) => {
-  const { scrollSnaps, selectedIndex, onDotButtonClick } = useCarousel()
+  const { scrollSnaps, selectedIndex, onScrollTo } = useCarousel()
 
   return (
     <div className="flex gap-2" {...props}>
       {scrollSnaps.map((_, index) => (
         <CarouselDotButton
           key={index}
-          onClick={() => onDotButtonClick(index)}
+          onClick={() => onScrollTo(index)}
           active={selectedIndex === index}
         />
       ))}
     </div>
+  )
+}
+
+const CarouselButton = ({ children, scrollTo, ...props }) => {
+  const { onScrollTo, selectedIndex } = useCarousel()
+
+  return (
+    <button
+      onClick={() => onScrollTo(scrollTo)}
+      data-state={scrollTo === selectedIndex ? 'active' : 'inactive'}
+      className="inline-flex items-center justify-center whitespace-nowrap rounded-2xl px-4 py-2 w-max text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-muted data-[state=active]:text-foreground data-[state=active]:shadow-sm"
+      {...props}
+    >
+      {children}
+    </button>
   )
 }
 
@@ -267,5 +284,6 @@ export {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
-  CarouselDotButtons
+  CarouselDotButtons,
+  CarouselButton
 }

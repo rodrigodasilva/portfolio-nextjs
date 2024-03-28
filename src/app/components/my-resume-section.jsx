@@ -1,4 +1,13 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+'use client'
+
+import AutoHeight from 'embla-carousel-auto-height'
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem
+} from '@/components/ui/carousel'
+import { CarouselButton } from '@/components/ui/carousel/carousel'
 
 const EXPERIENCE = [
   {
@@ -89,26 +98,32 @@ function ExperienceContent() {
   )
 }
 
+const OPTIONS = { align: 'start' }
+
 export function MyResumeSection() {
   return (
     <section className="max-w-screen-md flex flex-col items-center gap-8 w-full px-4 sm:px-0">
       <h3 className="text-3xl font-normal text-center">Meu currículo</h3>
 
-      <Tabs
-        defaultValue="experience"
-        className="w-full flex flex-col items-center gap-8"
+      <Carousel
+        className="w-ful flex flex-col gap-8"
+        opts={OPTIONS}
+        plugins={[AutoHeight()]}
       >
-        <TabsList className="flex gap-2 w-max">
-          <TabsTrigger value="experience">Experiência</TabsTrigger>
-          <TabsTrigger value="education">Educação</TabsTrigger>
-        </TabsList>
-        <TabsContent value="experience" className="w-full">
-          <ExperienceContent />
-        </TabsContent>
-        <TabsContent value="education" className="w-full">
-          <EducationContent />
-        </TabsContent>
-      </Tabs>
+        <div className="w-full flex items-center justify-center gap-4">
+          <CarouselButton scrollTo={0}>Experiência</CarouselButton>
+          <CarouselButton scrollTo={1}>Educação</CarouselButton>
+        </div>
+        <CarouselContent>
+          <CarouselItem className="flex flex-col gap-4">
+            <ExperienceContent />
+          </CarouselItem>
+
+          <CarouselItem className="flex flex-col gap-4">
+            <EducationContent />
+          </CarouselItem>
+        </CarouselContent>
+      </Carousel>
     </section>
   )
 }
