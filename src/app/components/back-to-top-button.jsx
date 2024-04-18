@@ -24,7 +24,7 @@ export function BackToTopButton() {
     <button
       type="button"
       className={cn(
-        'bottom-4 right-4 md:right-[calc(50%-380px)] bg-background text-primary text-sm px-2 py-1 flex gap-1 items-center rounded-full shadow shadow-primary/60',
+        'bottom-4 right-4 md:right-[calc(50%-380px)] lg:right-[calc(50%-460px)] bg-muted text-muted-foreground text-sm px-2 py-1 flex items-center justify-center rounded-full shadow shadow-muted/60 w-10 h-10 hover:bg-muted/80',
         {
           fixed: !!showButton,
           hidden: !showButton,
@@ -33,8 +33,8 @@ export function BackToTopButton() {
       )}
       onClick={scrollToTop}
     >
-      <IconChevronUp />
-      Voltar ao topo
+      <IconChevronUp className="w-4 h-4" />
+      {/* Voltar ao topo */}
     </button>
   )
 }

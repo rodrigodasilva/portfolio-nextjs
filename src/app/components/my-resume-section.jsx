@@ -8,6 +8,8 @@ import {
   CarouselItem
 } from '@/components/ui/carousel'
 import { CarouselButton } from '@/components/ui/carousel/carousel'
+import { Button } from '@/components/ui/button'
+import { IconArrowRight } from '@/components/ui/icons'
 
 const EXPERIENCE = [
   {
@@ -68,7 +70,7 @@ function ExperienceContent() {
       {EXPERIENCE?.map((item) => (
         <li
           key={item.period}
-          className="grid w-full grid-cols-1 gap-2 sm:grid-cols-2 border border-border px-6 py-4 rounded"
+          className="grid w-full grid-cols-1 gap-2 border border-border px-6 py-4 rounded"
         >
           <div className="flex flex-col gap-2">
             <h4 className="text-lg font-medium leading-none">
@@ -83,7 +85,14 @@ function ExperienceContent() {
             </span>
           </div>
 
-          <ul className="list-disc marker:text-muted-foreground pl-4 sm:pl-0">
+          <Button
+            variant="link"
+            className="text-muted-foreground mr-auto font-normal"
+          >
+            Ver detalhes <IconArrowRight className="w-4" />
+          </Button>
+
+          {/* <ul className="list-disc marker:text-muted-foreground pl-4 sm:pl-0">
             {item.descriptions.map((description, index) => (
               <li key={index}>
                 <span className="text-muted-foreground text-sm">
@@ -91,7 +100,7 @@ function ExperienceContent() {
                 </span>
               </li>
             ))}
-          </ul>
+          </ul> */}
         </li>
       ))}
     </ul>

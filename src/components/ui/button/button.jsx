@@ -12,7 +12,8 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary: 'bg-primary text-primary-foreground hover:opacity-90',
-        secondary: 'bg-muted text-muted-foreground hover:opacity-90'
+        secondary: 'bg-muted text-muted-foreground hover:opacity-90',
+        link: 'text-primary underline-offset-4 hover:underline !px-0'
       },
       size: {
         sm: 'h-8 px-3 text-sm',

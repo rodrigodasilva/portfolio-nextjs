@@ -10,7 +10,8 @@ import {
   IconRedux,
   IconTailwind,
   IconTypescript,
-  IconVite
+  IconVite,
+  IconReactflow
 } from '@/components/ui/icons'
 import { InfiniteMovingCards } from '@/components/ui/infinite-moving-cards'
 
@@ -38,6 +39,10 @@ const skills = [
   {
     title: 'Vite',
     icon: IconVite
+  },
+  {
+    title: 'Reactflow',
+    icon: IconReactflow
   },
   {
     title: 'Redux',
