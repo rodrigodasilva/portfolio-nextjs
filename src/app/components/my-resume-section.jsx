@@ -9,40 +9,10 @@ import {
 } from '@/components/ui/carousel'
 import { CarouselButton } from '@/components/ui/carousel/carousel'
 import { Button } from '@/components/ui/button'
-import { IconArrowRight } from '@/components/ui/icons'
+import { IconList } from '@/components/ui/icons'
+import { Drawer, DrawerContent, DrawerTrigger } from '@/components/ui/drawer'
 
-const EXPERIENCE = [
-  {
-    position: 'Desenvolvedor Fullstack',
-    company: 'Live On Solutions',
-    period: 'Out 2019 - Ago 2020',
-    descriptions: [
-      'Manutenção e desenvolvimento de novas funcionalidades com foco no frontend em um sistema de pagamentos white-label, usando React, Redux, Styled Components;',
-      'Implementação de páginas para realização de transferências, geração de relatórios, entre outras, realizando integração com API’s internas e externas;'
-    ]
-  },
-  {
-    position: 'Desenvolvedor Fullstack',
-    company: 'Code7',
-    period: 'Set 2020 - Atual',
-    descriptions: [
-      'Manutenção, planejamento de melhorias e adição de funcionalidades de um sistema drag-on-drop para criação de chatbots/uras utilizando React, Node e o ecossistema javascript;',
-      'Implementação de melhorias no desempenho do criador de bots;',
-      'Refatoração e desenvolvimento da aplicação com uma nova identidade visual;',
-      'Desenvolvimento de funcionalidade para internacionalização usando a biblioteca i18n;',
-      'Implementação de relatórios para controle de consumo das URA’s;',
-      'Documentação de componentes usando storybook;'
-    ]
-  }
-]
-
-const EDUCATION = [
-  {
-    course: 'Bacharel em Eng. da Computação',
-    local: 'Faculdade Independente do Nordeste',
-    period: 'Jan 2012 - Dez 2017'
-  }
-]
+import { EDUCATION, EXPERIENCE } from '../data'
 
 function EducationContent() {
   return (
@@ -83,24 +53,54 @@ function ExperienceContent() {
             <span className="bg-primary/10 px-1.5 py-1 rounded-sm text-xs font-normal text-primary w-max">
               {item.period}
             </span>
+
+            <span className="text-sm text-muted-foreground">
+              {item.skills?.join?.(' · ')}
+            </span>
           </div>
 
-          <Button
-            variant="link"
-            className="text-muted-foreground mr-auto font-normal"
-          >
-            Ver detalhes <IconArrowRight className="w-4" />
-          </Button>
+          <Drawer>
+            <DrawerTrigger asChild>
+              <Button
+                variant="link"
+                className="text-muted-foreground mr-auto font-normal"
+              >
+                <IconList className="w-4" /> Ver detalhes
+              </Button>
+            </DrawerTrigger>
+            <DrawerContent>
+              <div className="flex flex-col gap-4 max-w-screen-md w-full mx-auto pt-8 pb-12 px-4">
+                <div className="flex flex-col gap-2 ">
+                  <h4 className="text-lg font-medium leading-none">
+                    {item.position}
+                  </h4>
+                  <span className="text-base text-muted-foreground">
+                    {item.company}
+                  </span>
 
-          {/* <ul className="list-disc marker:text-muted-foreground pl-4 sm:pl-0">
-            {item.descriptions.map((description, index) => (
-              <li key={index}>
-                <span className="text-muted-foreground text-sm">
-                  {description}
+                  <span className="bg-primary/10 px-1.5 py-1 rounded-sm text-xs font-normal text-primary w-max">
+                    {item.period}
+                  </span>
+                </div>
+
+                <p className="text-sm text-muted-foreground">
+                  {item.description}
+                </p>
+
+                <ul className="list-disc list-inside">
+                  {item.tasks.map((task, index) => (
+                    <li key={index} className="text-sm text-muted-foreground">
+                      {task}
+                    </li>
+                  ))}
+                </ul>
+
+                <span className="text-sm text-muted-foreground">
+                  {'· '} {item.skills?.join?.(' · ')}
                 </span>
-              </li>
-            ))}
-          </ul> */}
+              </div>
+            </DrawerContent>
+          </Drawer>
         </li>
       ))}
     </ul>
