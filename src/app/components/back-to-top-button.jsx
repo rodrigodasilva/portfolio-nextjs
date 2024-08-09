@@ -34,7 +34,6 @@ export function BackToTopButton() {
       onClick={scrollToTop}
     >
       <IconChevronUp className="w-4 h-4" />
-      {/* Voltar ao topo */}
     </button>
   )
 }

@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -32,7 +33,7 @@ export function HomeSection() {
           <div className="flex flex-col justify-center gap-2">
             <h3 className="text-4xl sm:text-5xl font-bold">Rodrigo Ribeiro</h3>
             <h4 className="text-xl sm:text-2xl font-normal">
-              Desenvolvedor Web
+              Software Developer
             </h4>
           </div>
           <Banner className="flex sm:hidden max-w-[140px] h-[150px] rounded-b-[20px] rounded-t-[40px]" />
@@ -41,8 +42,8 @@ export function HomeSection() {
 
         <div className="flex flex-col gap-6">
           <p className="text-base leading-6 font-normal text-muted-foreground">
-            Formado em Engenharia da Computação, atualmente trabalho como
-            desenvolvedor utilizando ativamente NodeJS e ReactJS.
+            Engenheiro da Computação, atualmente trabalho como desenvolvedor
+            utilizando ativamente NodeJS e ReactJS.
           </p>
 
           <ButtonGroupSocialLinks className="text-muted-foreground" />
