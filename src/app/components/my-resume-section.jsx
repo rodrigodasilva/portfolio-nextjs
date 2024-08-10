@@ -53,10 +53,6 @@ function ExperienceContent() {
             <span className="bg-primary/10 px-1.5 py-1 rounded-sm text-xs font-normal text-primary w-max">
               {item.period}
             </span>
-
-            <span className="text-sm text-muted-foreground">
-              {item.skills?.join?.(' · ')}
-            </span>
           </div>
 
           <Drawer>
@@ -95,9 +91,15 @@ function ExperienceContent() {
                   ))}
                 </ul>
 
-                <span className="text-sm text-muted-foreground">
-                  {'· '} {item.skills?.join?.(' · ')}
-                </span>
+                <ul className="flex gap-2 flex-wrap">
+                  {item.skills?.map?.((skill, index) => (
+                    <li key={index}>
+                      <span className="bg-muted text-muted-foreground px-1.5 py-1 rounded-sm text-xs font-normal w-max flex">
+                        #{skill}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </DrawerContent>
           </Drawer>
