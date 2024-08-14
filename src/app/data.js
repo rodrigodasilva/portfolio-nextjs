@@ -21,10 +21,10 @@ const EXPERIENCE = [
     company: 'Live On Solutions',
     period: 'Out 2019 - Ago 2020',
     description:
-      'Desenvolvimento com foco no frontend utilizando as tecnologias ReactJS e Redux, responsável pela implementação e manutenção de um sistema de banco white-label.',
+      'Desenvolvimento com foco no frontend utilizando as tecnologias ReactJS e Redux, responsável pela implementação e manutenção de um sistema de banco white-label',
     tasks: [
-      'Manutenção e desenvolvimento de novas funcionalidades com foco no frontend em um sistema de pagamentos white-label, usando React, Redux, Styled Components;',
-      'Implementação de páginas para realização de transferências, geração de relatórios, entre outras, realizando integração com API’s internas e externas;'
+      'Manutenção e desenvolvimento de novas funcionalidades com foco no frontend em um sistema de pagamentos white-label, usando ReactJS, Redux, Styled Components',
+      'Implementação de páginas para realização de transferências, geração de relatórios, entre outras, realizando integração com API’s internas e externas'
     ],
     skills: [SKILLS.REACT, SKILLS.REDUX, SKILLS.STYLED_COMPONENTES]
   },
@@ -33,7 +33,7 @@ const EXPERIENCE = [
     company: 'Code7',
     period: 'Set 2020 - Atual',
     description:
-      'Manutenção, planejamento de melhorias e adição de funcionalidades de um sistema drag-on-drop para criação de chatbots/uras utilizando React, Node e o ecossistema javascript.',
+      'Manutenção, planejamento de melhorias e adição de funcionalidades de um sistema drag-on-drop para criação de chatbots/uras utilizando ReactJS, NodeJS e o ecossistema Javascript',
     tasks: [
       'Implementação de melhorias no desempenho do criador de bots',
       'Refatoração e desenvolvimento da aplicação com uma nova identidade visual',
