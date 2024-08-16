@@ -10,7 +10,13 @@ import {
 import { CarouselButton } from '@/components/ui/carousel/carousel'
 import { Button } from '@/components/ui/button'
 import { IconList } from '@/components/ui/icons'
-import { Drawer, DrawerContent, DrawerTrigger } from '@/components/ui/drawer'
+import {
+  Drawer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerTitle,
+  DrawerTrigger
+} from '@/components/ui/drawer'
 
 import { EDUCATION, EXPERIENCE } from '../data'
 
@@ -67,12 +73,8 @@ function ExperienceContent() {
             <DrawerContent>
               <div className="flex flex-col gap-4 max-w-screen-md w-full mx-auto pt-8 pb-12 px-4">
                 <div className="flex flex-col gap-2 ">
-                  <h4 className="text-lg font-medium leading-none">
-                    {item.position}
-                  </h4>
-                  <span className="text-base text-muted-foreground">
-                    {item.company}
-                  </span>
+                  <DrawerTitle>{item.position}</DrawerTitle>
+                  <DrawerDescription>{item.company}</DrawerDescription>
 
                   <span className="bg-primary/10 px-1.5 py-1 rounded-sm text-xs font-normal text-primary w-max">
                     {item.period}
