@@ -2,6 +2,7 @@ const SKILLS = {
   REACT: 'ReactJS',
   REDUX: 'Redux',
   NODE: 'NodeJS',
+  NEXT: 'Next.js',
   TYPESCRIPT: 'Typescript',
   TAILWIND: 'TailwindCSS',
   REACT_SELECT: 'React Select',
@@ -12,7 +13,11 @@ const SKILLS = {
   SHADCN_UI: 'Shadcn Ui',
   STORYBOOK: 'Storybook',
   EXPRESSJS: 'Express',
-  MONGODB: 'MongoDb'
+  MONGODB: 'MongoDb',
+  POSTGRES_SQL: 'PostgreSQL',
+  SOCKET_IO: 'SocketIO',
+  REACT_QUERY: 'React Query',
+  ZUSTAND: 'Zustand'
 }
 
 const EXPERIENCE = [
@@ -51,6 +56,8 @@ const EXPERIENCE = [
       SKILLS.REACT_HOOK_FORM,
       SKILLS.REDUX,
       SKILLS.STORYBOOK,
+      SKILLS.REACT_QUERY,
+      SKILLS.ZUSTAND,
       SKILLS.REACT_FLOW,
       SKILLS.REACT_SELECT
     ]
@@ -65,4 +72,72 @@ const EDUCATION = [
   }
 ]
 
-export { SKILLS, EXPERIENCE, EDUCATION }
+const PROJECTS = [
+  {
+    title: 'Logempenho',
+    description: 'Sistema para controle de SD’s utilizadas no setor público',
+    skills: [
+      SKILLS.REACT,
+      SKILLS.NODE,
+      SKILLS.MONGODB,
+      SKILLS.POSTGRES_SQL,
+      SKILLS.SOCKET_IO,
+      SKILLS.TAILWIND,
+      SKILLS.SHADCN_UI,
+      SKILLS.REACT_HOOK_FORM,
+      SKILLS.REDUX
+    ],
+    gallery: [
+      '/project_logempenho_1.png',
+      '/project_logempenho_2.png',
+      '/project_logempenho_3.png',
+      '/project_logempenho_4.png'
+    ],
+    features: [
+      'Gerenciamento da SD com permissionamento por tipo do usuário',
+      'Geração de relatório com filtros customizados',
+      'Chat em tempo real entre os usuários da plataforma',
+      "Notificação em tempo real de novas SD's"
+    ]
+  },
+  {
+    title: 'NaTrave',
+    description: 'Sistema para gerenciamento de bolões de futebol',
+    skills: [
+      SKILLS.REACT,
+      SKILLS.NODE,
+      SKILLS.MONGODB,
+      SKILLS.POSTGRES_SQL,
+      SKILLS.TAILWIND,
+      SKILLS.REACT_QUERY,
+      SKILLS.REACT_HOOK_FORM
+    ],
+    gallery: ['/project_na_trave_1.png'],
+    features: []
+  },
+  {
+    title: 'JM Contabilize',
+    description:
+      'Landing page e página de checkout com link de pagamento para um escritório de contabilidade',
+    skills: [
+      SKILLS.NEXT,
+      SKILLS.SHADCN_UI,
+      SKILLS.TAILWIND,
+      SKILLS.REACT_HOOK_FORM
+    ],
+    gallery: [
+      '/project_jm_contabilize_1.png',
+      '/project_jm_contabilize_2.png',
+      '/project_jm_contabilize_3.png',
+      '/project_jm_contabilize_4.png',
+      '/project_jm_contabilize_5.png',
+      '/project_jm_contabilize_6.png'
+    ],
+    features: [
+      'Landing page para captação de clientes configurada com Google Analytics',
+      'Página de checkout com link de pagamento'
+    ]
+  }
+]
+
+export { SKILLS, EXPERIENCE, EDUCATION, PROJECTS }

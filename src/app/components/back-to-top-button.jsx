@@ -16,7 +16,7 @@ export function BackToTopButton() {
 
     window?.scrollTo?.({
       top: 0,
-      behavior: 'auto'
+      behavior: 'smooth'
     })
   }
 

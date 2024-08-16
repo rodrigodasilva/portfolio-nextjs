@@ -1,3 +1,7 @@
+import Image from 'next/image'
+
+import { cn } from '@/utils/classnames'
+
 import {
   Carousel,
   CarouselContent,
@@ -6,8 +10,15 @@ import {
   CarouselNext,
   CarouselPrevious
 } from '@/components/ui/carousel'
+import {
+  Drawer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerTitle,
+  DrawerTrigger
+} from '@/components/ui/drawer'
 
-const OPTIONS = { align: 'start' }
+import { PROJECTS } from '../data'
 
 export function ProjectsSection() {
   return (
@@ -19,18 +30,89 @@ export function ProjectsSection() {
         Últimos projetos
       </h3>
 
-      <Carousel className="w-ful flex flex-col gap-8 w-full" opts={OPTIONS}>
+      <Carousel
+        className="w-ful flex flex-col gap-8 w-full"
+        opts={{ align: 'start' }}
+      >
         <CarouselContent>
-          {Array.from({ length: 8 }).map((_, index) => (
+          {PROJECTS.map((item, index) => (
             <CarouselItem key={index} className="max-w-xs flex flex-col gap-4">
-              <div className="flex aspect-video items-center justify-center p-6 bg-muted/50 rounded-md"></div>
-              <div className="flex flex-col gap-1.5">
-                <span className="text-base font-medium">Project name</span>
-                <span className="text-sm text-muted-foreground">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est
-                  excepturi quis velit, voluptatem magni beatae.
-                </span>
-              </div>
+              <Drawer>
+                <DrawerTrigger className="aspect-video rounded-md h-[230px]">
+                  <Image
+                    src={item.gallery?.[0]}
+                    alt="Project"
+                    width={600}
+                    height={530}
+                    className={cn(
+                      'w-full h-full object-cover object-top rounded-md'
+                    )}
+                  />
+                </DrawerTrigger>
+                <div className="flex flex-col gap-1.5">
+                  <span className="text-base font-medium">{item.title}</span>
+                  <span className="text-sm text-muted-foreground">
+                    {item.description}
+                  </span>
+                </div>
+
+                <DrawerContent>
+                  <div className="flex flex-col gap-4 max-w-screen-md w-full mx-auto pt-8 pb-12 px-4">
+                    <div className="flex flex-col gap-2 ">
+                      <DrawerTitle>{item.title}</DrawerTitle>
+                      <DrawerDescription>{item.description}</DrawerDescription>
+                    </div>
+
+                    <ul className="list-disc list-inside">
+                      {item.features.map((task, index) => (
+                        <li
+                          key={index}
+                          className="text-sm text-muted-foreground"
+                        >
+                          {task}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <Carousel
+                      className="w-ful flex gap-2"
+                      opts={{ align: 'start' }}
+                    >
+                      <CarouselPrevious className="my-auto w-12 min-w-12 h-12" />
+                      <CarouselContent className>
+                        {item.gallery.map((image, _index) => (
+                          <CarouselItem
+                            key={_index}
+                            className="aspect-video rounded-md h-[320px] max-w-sm"
+                          >
+                            <Image
+                              src={image}
+                              alt="Project"
+                              width={600}
+                              height={530}
+                              className={cn(
+                                'w-full h-full object-contain object-top rounded-md'
+                              )}
+                            />
+                          </CarouselItem>
+                        ))}
+                      </CarouselContent>
+
+                      <CarouselNext className="my-auto" />
+                    </Carousel>
+
+                    <ul className="flex gap-2 flex-wrap">
+                      {item.skills?.map?.((skill, index) => (
+                        <li key={index}>
+                          <span className="bg-muted text-muted-foreground px-1.5 py-1 rounded-sm text-xs font-normal w-max flex">
+                            #{skill}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </DrawerContent>
+              </Drawer>
             </CarouselItem>
           ))}
         </CarouselContent>
