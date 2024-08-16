@@ -97,7 +97,7 @@ const PROJECTS = [
       'Gerenciamento da SD com permissionamento por tipo do usuário',
       'Geração de relatório com filtros customizados',
       'Chat em tempo real entre os usuários da plataforma',
-      "Notificação em tempo real de novas SD's"
+      "Notificação em tempo real na edição das SD's"
     ]
   },
   {

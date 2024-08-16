@@ -78,8 +78,8 @@ export function ProjectsSection() {
                       className="w-ful flex gap-2"
                       opts={{ align: 'start' }}
                     >
-                      <CarouselPrevious className="my-auto w-12 min-w-12 h-12" />
-                      <CarouselContent className>
+                      <CarouselPrevious className="my-auto min-w-[40px] h-10" />
+                      <CarouselContent>
                         {item.gallery.map((image, _index) => (
                           <CarouselItem
                             key={_index}
@@ -98,7 +98,7 @@ export function ProjectsSection() {
                         ))}
                       </CarouselContent>
 
-                      <CarouselNext className="my-auto" />
+                      <CarouselNext className="my-auto min-w-[40px] h-10" />
                     </Carousel>
 
                     <ul className="flex gap-2 flex-wrap">
