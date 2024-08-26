@@ -50,7 +50,7 @@ export function ProjectsSection() {
                     )}
                   />
                   <div
-                    className="absolute inset-0 bg-muted/80 p-3 flex items-end justify-end rounded-md"
+                    className="absolute inset-0 bg-background/80 p-3 flex items-end justify-end rounded-md"
                     title="Ver detalhes"
                   >
                     <IconSearch className="w-4 h-4 text-muted-foreground" />
