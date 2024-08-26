@@ -1,7 +1,7 @@
 'use client'
 
 import { cn } from '@/utils/classnames'
-import React, { useEffect, useState } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 
 export const InfiniteMovingCards = ({
   children,
@@ -13,7 +13,7 @@ export const InfiniteMovingCards = ({
   const containerRef = React.useRef(null)
   const scrollerRef = React.useRef(null)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     addAnimation()
   }, [])
 
@@ -35,6 +35,7 @@ export const InfiniteMovingCards = ({
       setStart(true)
     }
   }
+
   const getDirection = () => {
     if (containerRef.current) {
       if (direction === 'left') {
@@ -50,6 +51,7 @@ export const InfiniteMovingCards = ({
       }
     }
   }
+
   const getSpeed = () => {
     if (containerRef.current) {
       if (speed === 'fast') {
