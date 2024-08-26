@@ -17,6 +17,7 @@ import {
   DrawerTitle,
   DrawerTrigger
 } from '@/components/ui/drawer'
+import { IconSearch } from '@/components/ui/icons'
 
 import { PROJECTS } from '../data'
 
@@ -38,7 +39,7 @@ export function ProjectsSection() {
           {PROJECTS.map((item, index) => (
             <CarouselItem key={index} className="max-w-xs flex flex-col gap-4">
               <Drawer>
-                <DrawerTrigger className="aspect-video rounded-md h-[230px]">
+                <DrawerTrigger className="aspect-video rounded-md h-[230px] relative">
                   <Image
                     src={item.gallery?.[0]}
                     alt="Project"
@@ -48,6 +49,12 @@ export function ProjectsSection() {
                       'w-full h-full object-cover object-top rounded-md'
                     )}
                   />
+                  <div
+                    className="absolute inset-0 bg-muted/80 p-3 flex items-end justify-end rounded-md"
+                    title="Ver detalhes"
+                  >
+                    <IconSearch className="w-4 h-4 text-muted-foreground" />
+                  </div>
                 </DrawerTrigger>
                 <div className="flex flex-col gap-1.5">
                   <span className="text-base font-medium">{item.title}</span>
@@ -74,11 +81,20 @@ export function ProjectsSection() {
                       ))}
                     </ul>
 
+                    <ul className="flex gap-2 flex-wrap">
+                      {item.skills?.map?.((skill, index) => (
+                        <li key={index}>
+                          <span className="bg-muted text-muted-foreground px-1.5 py-1 rounded-sm text-xs font-normal w-max flex">
+                            #{skill}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+
                     <Carousel
-                      className="w-ful flex gap-2"
+                      className="w-ful flex flex-col gap-8 w-full"
                       opts={{ align: 'start' }}
                     >
-                      <CarouselPrevious className="my-auto min-w-[40px] h-10" />
                       <CarouselContent>
                         {item.gallery.map((image, _index) => (
                           <CarouselItem
@@ -98,18 +114,12 @@ export function ProjectsSection() {
                         ))}
                       </CarouselContent>
 
-                      <CarouselNext className="my-auto min-w-[40px] h-10" />
+                      <div className="w-full flex items-center justify-between">
+                        <CarouselPrevious />
+                        <CarouselDotButtons />
+                        <CarouselNext />
+                      </div>
                     </Carousel>
-
-                    <ul className="flex gap-2 flex-wrap">
-                      {item.skills?.map?.((skill, index) => (
-                        <li key={index}>
-                          <span className="bg-muted text-muted-foreground px-1.5 py-1 rounded-sm text-xs font-normal w-max flex">
-                            #{skill}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
                   </div>
                 </DrawerContent>
               </Drawer>
