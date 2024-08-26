@@ -1,7 +1,7 @@
 'use client'
 
 import { cn } from '@/utils/classnames'
-import React, { useLayoutEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export const InfiniteMovingCards = ({
   children,
@@ -13,7 +13,7 @@ export const InfiniteMovingCards = ({
   const containerRef = React.useRef(null)
   const scrollerRef = React.useRef(null)
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     addAnimation()
   }, [])
 
