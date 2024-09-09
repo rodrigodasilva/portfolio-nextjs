@@ -19,11 +19,14 @@ import {
 } from '@/components/ui/drawer'
 import { IconSearch } from '@/components/ui/icons'
 
+import { AnimateEnter } from './animate-enter'
+
 import { PROJECTS } from '../data'
 
 export function ProjectsSection() {
   return (
-    <section
+    <AnimateEnter
+      delay={0.4}
       className="max-w-screen-md flex flex-col items-center gap-8 w-full px-4 sm:px-0"
       id="projetos"
     >
@@ -132,6 +135,6 @@ export function ProjectsSection() {
           <CarouselNext />
         </div>
       </Carousel>
-    </section>
+    </AnimateEnter>
   )
 }

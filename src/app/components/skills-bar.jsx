@@ -15,6 +15,8 @@ import {
 } from '@/components/ui/icons'
 import { InfiniteMovingCards } from '@/components/ui/infinite-moving-cards'
 
+import { AnimateEnter } from './animate-enter'
+
 const skills = [
   {
     title: 'Javascript',
@@ -72,7 +74,7 @@ const skills = [
 
 export function SkillsBar() {
   return (
-    <div className="w-full max-w-screen-md">
+    <AnimateEnter delay={0.4} className="w-full max-w-screen-md">
       <InfiniteMovingCards
         direction="right"
         speed="slow"
@@ -92,6 +94,6 @@ export function SkillsBar() {
           </li>
         ))}
       </InfiniteMovingCards>
-    </div>
+    </AnimateEnter>
   )
 }

@@ -8,6 +8,8 @@ import { submitContactForm } from '../actions'
 import { useState } from 'react'
 import { Spinner } from '@/components/ui/spinner'
 
+import { AnimateEnter } from './animate-enter'
+
 export function ContactFormSection() {
   const [isLoading, setIsLoading] = useState(false)
 
@@ -27,7 +29,8 @@ export function ContactFormSection() {
   }
 
   return (
-    <section
+    <AnimateEnter
+      delay={0.4}
       className="max-w-screen-md flex flex-col items-center gap-8 w-full px-4 sm:px-0"
       id="contato"
     >
@@ -65,6 +68,6 @@ export function ContactFormSection() {
           {!isLoading && <IconCircleArrowRight className="w-8 h-8" />}
         </Button>
       </form>
-    </section>
+    </AnimateEnter>
   )
 }

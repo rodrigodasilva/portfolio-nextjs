@@ -7,6 +7,8 @@ import { Button } from '@/components/ui/button'
 import { IconCircleArrowRight } from '@/components/ui/icons'
 import { Separator } from '@/components/ui/separator'
 
+import { AnimateEnter } from './animate-enter'
+
 import { cn } from '@/utils/classnames'
 
 function Banner({ className = '' }) {
@@ -27,7 +29,7 @@ function Banner({ className = '' }) {
 
 export function HomeSection() {
   return (
-    <section className="max-w-screen-md flex gap-4 w-full px-4 md:px-0">
+    <AnimateEnter className="max-w-screen-md flex gap-4 w-full px-4 md:px-0">
       <div className="flex flex-col gap-6">
         <div className="flex gap-2 justify-between">
           <div className="flex flex-col justify-center gap-2">
@@ -58,6 +60,6 @@ export function HomeSection() {
       </div>
 
       <Banner className="hidden sm:flex max-w-[240px] h-[270px] rounded-b-[40px] rounded-t-[80px]" />
-    </section>
+    </AnimateEnter>
   )
 }

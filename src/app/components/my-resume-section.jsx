@@ -18,6 +18,8 @@ import {
   DrawerTrigger
 } from '@/components/ui/drawer'
 
+import { AnimateEnter } from './animate-enter'
+
 import { EDUCATION, EXPERIENCE } from '../data'
 
 function EducationContent() {
@@ -115,7 +117,10 @@ const OPTIONS = { align: 'start' }
 
 export function MyResumeSection() {
   return (
-    <section className="max-w-screen-md flex flex-col items-center gap-8 w-full px-4 sm:px-0">
+    <AnimateEnter
+      delay={0.4}
+      className="max-w-screen-md flex flex-col items-center gap-8 w-full px-4 sm:px-0"
+    >
       <h3 className="text-3xl font-normal text-center">Meu currículo</h3>
 
       <Carousel
@@ -137,6 +142,6 @@ export function MyResumeSection() {
           </CarouselItem>
         </CarouselContent>
       </Carousel>
-    </section>
+    </AnimateEnter>
   )
 }
