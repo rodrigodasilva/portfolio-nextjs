@@ -50,10 +50,14 @@ export function HomeSection() {
 
           <ButtonGroupSocialLinks className="text-muted-foreground" />
 
-          <Button className="w-max pr-1" radius="full" asChild>
+          <Button
+            className="group w-max px-5 pr-2 shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/40"
+            radius="full"
+            asChild
+          >
             <Link href="#contato">
               Entre em contato
-              <IconCircleArrowRight className="w-8 h-8" />
+              <IconCircleArrowRight className="h-8 w-8 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </Button>
         </div>
