@@ -4,14 +4,15 @@ import { motion } from 'framer-motion'
 
 import { cn } from '@/utils/classnames'
 
-export function AnimateEnter({ className, delay, children }) {
+export function AnimateEnter({ className, delay, children, ...props }) {
   return (
     <motion.section
       className={cn(className)}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 1 }}
-      transition={{ duration: 0.6, ease: 'easeInOut', delay }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.4, ease: 'easeOut', delay }}
+      {...props}
     >
       {children}
     </motion.section>
