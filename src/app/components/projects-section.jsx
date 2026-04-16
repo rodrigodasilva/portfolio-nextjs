@@ -42,21 +42,30 @@ export function ProjectsSection() {
           {PROJECTS.map((item, index) => (
             <CarouselItem key={index} className="max-w-xs flex flex-col gap-4">
               <Drawer>
-                <DrawerTrigger className="aspect-video rounded-md h-[230px] relative">
+                <DrawerTrigger className="group relative h-[230px] aspect-video overflow-hidden rounded-md">
                   <Image
                     src={item.gallery?.[0]}
                     alt="Project"
                     width={600}
                     height={530}
                     className={cn(
-                      'w-full h-full object-cover object-top rounded-md'
+                      'h-full w-full rounded-md object-cover object-top transition-transform duration-300 group-hover:scale-105'
                     )}
                   />
                   <div
-                    className="absolute inset-0 bg-background/80 p-3 flex items-end justify-end rounded-md"
+                    className="absolute bottom-3 right-3 rounded-full bg-background/90 px-3 py-1 text-xs font-medium text-foreground md:hidden"
+                    title="Toque para ver"
+                  >
+                    Toque para ver
+                  </div>
+                  <div
+                    className="absolute inset-0 hidden items-center justify-center rounded-md bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:flex"
                     title="Ver detalhes"
                   >
-                    <IconSearch className="w-4 h-4 text-muted-foreground" />
+                    <span className="pointer-events-none inline-flex items-center gap-2 rounded-md bg-muted px-4 py-2 text-sm font-medium text-muted-foreground">
+                      <IconSearch className="h-4 w-4" />
+                      Ver projeto
+                    </span>
                   </div>
                 </DrawerTrigger>
                 <div className="space-y-2">
