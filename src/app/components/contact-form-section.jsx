@@ -62,8 +62,8 @@ export function ContactFormSection() {
           <Input id="message" name="message" required />
         </div>
 
-        <Button className="w-max pr-1" radius="full">
-          Enviar mensagem
+        <Button className="w-max pr-1" radius="full" disabled={isLoading}>
+          {isLoading ? 'Enviando...' : 'Enviar mensagem'}
           {isLoading && <Spinner size="lg" />}
           {!isLoading && <IconCircleArrowRight className="w-8 h-8" />}
         </Button>
