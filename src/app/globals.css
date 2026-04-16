@@ -28,7 +28,6 @@
   }  
 }
 
-
 ::-webkit-scrollbar {  
   width: 2rem;
   background-color: hsla(var(--border));

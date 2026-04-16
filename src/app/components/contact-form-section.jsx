@@ -55,7 +55,7 @@ export function ContactFormSection() {
   return (
     <AnimateEnter
       delay={0.4}
-      className="max-w-screen-md flex flex-col items-center gap-8 w-full px-4 sm:px-0"
+      className="max-w-screen-md flex w-full flex-col items-center gap-8 scroll-mt-20 px-4 sm:px-0"
       id="contato"
     >
       <div className="space-y-2">

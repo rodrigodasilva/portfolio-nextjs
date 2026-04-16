@@ -29,7 +29,10 @@ function Banner({ className = '' }) {
 
 export function HomeSection() {
   return (
-    <AnimateEnter className="max-w-screen-md flex gap-4 w-full px-4 md:px-0">
+    <AnimateEnter
+      className="max-w-screen-md flex gap-4 w-full scroll-mt-20 px-4 md:px-0"
+      id="home"
+    >
       <div className="flex flex-col gap-6">
         <div className="flex gap-2 justify-between">
           <div className="flex flex-col justify-center gap-2">
