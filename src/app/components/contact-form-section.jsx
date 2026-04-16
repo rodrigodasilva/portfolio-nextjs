@@ -17,13 +17,14 @@ export function ContactFormSection() {
     e.preventDefault()
     setIsLoading(true)
 
-    const form = new FormData(e.target)
+    const formElement = e.target
+    const form = new FormData(formElement)
     const name = form.get('name')?.trim?.()
     const email = form.get('email')?.trim?.()
-    const subject = form.get('subject')?.trim?.()
     const message = form.get('message')?.trim?.()
 
-    await submitContactForm({ name, email, subject, message })
+    await submitContactForm({ name, email, message })
+    formElement.reset()
 
     setIsLoading(false)
   }
@@ -52,10 +53,6 @@ export function ContactFormSection() {
         <div className="flex flex-col gap-2">
           <Label htmlFor="email">E-mail</Label>
           <Input id="email" name="email" type="email" required />
-        </div>
-        <div className="flex flex-col gap-2">
-          <Label htmlFor="subject">Assunto</Label>
-          <Input id="subject" name="subject" required />
         </div>
         <div className="flex flex-col gap-2">
           <Label htmlFor="message">Mensagem</Label>
