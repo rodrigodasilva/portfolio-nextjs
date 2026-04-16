@@ -34,8 +34,8 @@ export function HomeSection() {
         <div className="flex gap-2 justify-between">
           <div className="flex flex-col justify-center gap-2">
             <h3 className="text-4xl sm:text-5xl font-bold">Rodrigo Ribeiro</h3>
-            <h4 className="text-xl sm:text-2xl font-normal">
-              Software Developer
+            <h4 className="max-w-lg text-xl font-normal sm:text-2xl">
+              Fullstack Developer | Node.js • React • AWS
             </h4>
           </div>
           <Banner className="flex sm:hidden max-w-[140px] h-[150px] rounded-b-[20px] rounded-t-[40px]" />
@@ -43,9 +43,9 @@ export function HomeSection() {
         <Separator className="bg-border max-w-[100px] w-full" />
 
         <div className="flex flex-col gap-6">
-          <p className="text-base leading-6 font-normal text-muted-foreground">
-            Engenheiro da Computação, atualmente trabalho como desenvolvedor
-            utilizando ativamente NodeJS e ReactJS.
+          <p className="max-w-xl text-base font-normal leading-6 text-muted-foreground">
+            Desenvolvedor focado em performance, arquitetura escalavel e
+            processamento de alto volume de dados.
           </p>
 
           <ButtonGroupSocialLinks className="text-muted-foreground" />
