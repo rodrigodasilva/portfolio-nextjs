@@ -1,17 +1,29 @@
 'use client'
 
+import { useEffect, useState } from 'react'
+
 import { Button } from '@/components/ui/button'
 import { IconCircleArrowRight } from '@/components/ui/icons'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { submitContactForm } from '../actions'
-import { useState } from 'react'
 import { Spinner } from '@/components/ui/spinner'
 
 import { AnimateEnter } from './animate-enter'
 
 export function ContactFormSection() {
   const [isLoading, setIsLoading] = useState(false)
+  const [feedback, setFeedback] = useState(null)
+
+  useEffect(() => {
+    if (!feedback) return
+
+    const timeoutId = window.setTimeout(() => {
+      setFeedback(null)
+    }, 3000)
+
+    return () => window.clearTimeout(timeoutId)
+  }, [feedback])
 
   async function handleSubmitForm(e) {
     e.preventDefault()
@@ -23,10 +35,21 @@ export function ContactFormSection() {
     const email = form.get('email')?.trim?.()
     const message = form.get('message')?.trim?.()
 
-    await submitContactForm({ name, email, message })
-    formElement.reset()
-
-    setIsLoading(false)
+    try {
+      await submitContactForm({ name, email, message })
+      formElement.reset()
+      setFeedback({
+        type: 'success',
+        message: 'Mensagem enviada com sucesso!'
+      })
+    } catch (error) {
+      setFeedback({
+        type: 'error',
+        message: 'Nao foi possivel enviar sua mensagem. Tente novamente.'
+      })
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (
@@ -65,6 +88,20 @@ export function ContactFormSection() {
           {!isLoading && <IconCircleArrowRight className="w-8 h-8" />}
         </Button>
       </form>
+
+      {feedback ? (
+        <div
+          className={`fixed bottom-4 right-4 z-50 rounded-lg border px-4 py-3 text-sm shadow-lg backdrop-blur ${
+            feedback.type === 'success'
+              ? 'border-accent/30 bg-accent text-accent-foreground'
+              : 'border-destructive/40 bg-destructive text-destructive-foreground'
+          }`}
+          role="status"
+          aria-live="polite"
+        >
+          {feedback.message}
+        </div>
+      ) : null}
     </AnimateEnter>
   )
 }
