@@ -59,11 +59,11 @@ export function ProjectsSection() {
                     <IconSearch className="w-4 h-4 text-muted-foreground" />
                   </div>
                 </DrawerTrigger>
-                <div className="flex flex-col gap-1.5">
-                  <span className="text-base font-medium">{item.title}</span>
-                  <span className="text-sm text-muted-foreground">
+                <div className="space-y-2">
+                  <h4 className="text-base font-medium">{item.title}</h4>
+                  <p className="text-sm text-muted-foreground">
                     {item.description}
-                  </span>
+                  </p>
                 </div>
 
                 <DrawerContent>

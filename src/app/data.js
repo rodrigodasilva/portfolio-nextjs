@@ -75,7 +75,8 @@ const EDUCATION = [
 const PROJECTS = [
   {
     title: 'Logempenho',
-    description: 'Sistema para controle de SD’s utilizadas no setor público',
+    description:
+      'Produto orientado a fluxo operacional com controle de acessos, relatorios customizados e colaboracao entre usuarios.',
     skills: [
       SKILLS.REACT,
       SKILLS.NODE,
@@ -102,7 +103,8 @@ const PROJECTS = [
   },
   {
     title: 'NaTrave',
-    description: 'Sistema para gerenciamento de bolões de futebol',
+    description:
+      'Produto com foco em experiencia do usuario, fluxo claro de participacao e gestao simples.',
     skills: [
       SKILLS.REACT,
       SKILLS.NODE,
@@ -118,7 +120,7 @@ const PROJECTS = [
   {
     title: 'JM Contabilize',
     description:
-      'Landing page e página de checkout com link de pagamento para um escritório de contabilidade',
+      'Estrutura orientada a conversao, clareza na proposta comercial e jornada objetiva.',
     skills: [
       SKILLS.NEXT,
       SKILLS.SHADCN_UI,
