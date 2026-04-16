@@ -14,7 +14,7 @@ export function Footer() {
   return (
     <div className="w-full flex flex-col items-center gap-8">
       <h3 className="text-3xl font-normal text-center px-4">
-        Vamos trabalhar juntos?!
+        Disponivel para novos projetos
       </h3>
 
       <Separator />
